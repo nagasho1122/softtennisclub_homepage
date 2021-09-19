@@ -1,0 +1,9 @@
+<h1>部員紹介</h1>
+
+<ul class="users">
+  <% @members.each do |member| %>
+    <li>
+      <%= member.name %>
+    </li>
+  <% end %>
+</ul>

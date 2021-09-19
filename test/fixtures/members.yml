@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+example_member:
+  name: "横国太郎"
+  position: "後衛" 
+  from: "横浜高校"
+  text: "生粋のハマっ子。最近パチンコにハマってるカス野郎"
+  department: "教育学部"
+  director: "副将"
+  word: "どこだよそれFランジャーン"
+  addmission_date: DateTime.now
+  
+example_member_destroy:
+  name: "横国新之助"
+  position: "前衛" 
+  from: "横浜高校"
+  text: "生粋のハマっ子。最近パチンコにハマってるカス野郎"
+  department: "教育学部"
+  director: ""
+  word: "どこだよそれFランジャーン"
+  addmission_date: DateTime.now
+
+
