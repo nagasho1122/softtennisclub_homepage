@@ -7,8 +7,8 @@ example_member:
   text: "生粋のハマっ子。最近パチンコにハマってるカス野郎"
   department: "教育学部"
   director: "副将"
-  word: "どこだよそれFランジャーン"
-  addmission_date: DateTime.now
+  word: "どこだよそれFランジャーン。"
+  addmission_date: 2021-4-1-0-0-0
   
 example_member_destroy:
   name: "横国新之助"
@@ -17,7 +17,27 @@ example_member_destroy:
   text: "生粋のハマっ子。最近パチンコにハマってるカス野郎"
   department: "教育学部"
   director: ""
-  word: "どこだよそれFランジャーン"
-  addmission_date: DateTime.now
+  word: "どこだよそれSランジャーン。"
+  addmission_date: 2020-4-1-0-0-0
+
+example_member_thirdgrade:
+  name: "横国三男"
+  position: "前衛" 
+  from: "浜高校"
+  text: "生粋のハマっ子。最近猫にハマってるカス野郎"
+  department: "理工学部"
+  director: ""
+  word: "がんばりまーす。"
+  addmission_date: 2019-4-1-0-0-0
+  
+example_member_forthgrade:
+  name: "横国四男"
+  position: "後衛" 
+  from: "ボブ高校"
+  text: "外国人助っ人。"
+  department: "都市科学部"
+  director: ""
+  word: "ワタシモガンバリマス。"
+  addmission_date: 2018-4-1-0-0-0
 
 
