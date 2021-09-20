@@ -6,4 +6,7 @@
 
 
       <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+      <span class="document">
+        <%= f.file_field :document, accept: "application/pdf"%>
+      </span>
     <% end %>

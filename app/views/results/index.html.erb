@@ -3,7 +3,11 @@
 <ul class="users">
   <% @results.each do |result| %>
     <li>
-      <%= result.name %>
+      <% if result.document.attached? %>
+        <%= link_to result.name, rails_blob_path(result.document) %>
+      <% else %>
+        <%= result.name %>
+      <% end %>
     </li>
   <% end %>
 </ul>

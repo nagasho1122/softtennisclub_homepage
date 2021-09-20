@@ -1,0 +1,14 @@
+function previewImage(id) {
+  const target = this.event.target;     
+  const file = target.files[0];       
+  const reader = new FileReader(); 
+  console.log('JavaScript');
+  reader.onloadend = function() {     
+    preview.src = reader.result;       
+  };
+  if (file) {
+    reader.readAsDataURL(file);      
+  } else {
+    preview.src = "";
+  }
+}

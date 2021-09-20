@@ -11,6 +11,7 @@ class ResultsController < ApplicationController
   
   def create
     @result = Result.new(result_params)
+    @result.document.attach(params[:result][:document])
     if @result.save
       flash[:success] = "大会結果を追加しました。"
       redirect_to results_path
@@ -41,6 +42,6 @@ class ResultsController < ApplicationController
   
   private
     def result_params
-      params.require(:result).permit(:name)
+      params.require(:result).permit(:name, :document)
     end
 end

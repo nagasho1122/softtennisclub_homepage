@@ -6,6 +6,7 @@
     <ul class="members_fourth">
       <li class="member">
         <%= member.name %>
+        <%= image_tag member.display_image if member.image.attached? %>
       </li>
     </ul>
  <% end %>
@@ -16,6 +17,7 @@
     <ul class="members_third">
       <li class="member">
         <%= member.name %>
+        <%= image_tag member.display_image if member.image.attached? %>
       </li>
     </ul>
   <% end %>
@@ -26,6 +28,7 @@
     <ul class="members_second">
       <li class="member">
         <%= member.name %>
+        <%= image_tag member.display_image if member.image.attached? %>
       </li>
     </ul>
   <% end %>
@@ -36,6 +39,7 @@
     <ul class="members_one">
       <li class="member">
         <%= member.name %>
+        <%= image_tag member.display_image if member.image.attached? %>
       </li>
     </ul>
   <% end %>

@@ -26,4 +26,8 @@
       <%= f.date_field :addmission_date, class: 'form-control' %>
 
       <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+      <%= image_tag @member.display_image if @member.image.attached? %>
+      <span class="image">
+        <%= f.file_field :image, onchange: 'previewImage(preview)', accept: "image/jpeg, image/gif, image/png" %>
+      </span>
     <% end %>

@@ -26,6 +26,7 @@ class MembersController < ApplicationController
   
   def create
     @member = Member.new(member_params)
+    @member.image.attach(params[:member][:image])
     if @member.save
       flash[:success] = "部員を追加しました。"
       redirect_to members_path
@@ -58,7 +59,7 @@ class MembersController < ApplicationController
   
     def member_params
       params.require(:member).permit(:name, :position, :from,:text,
-                          :department, :director, :word, :addmission_date)
+                          :department, :director, :word, :addmission_date, :image)
     end
-  
+    
 end
