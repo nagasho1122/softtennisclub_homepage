@@ -26,8 +26,27 @@
       <%= f.date_field :addmission_date, class: 'form-control' %>
 
       <%= f.submit yield(:button_text), class: "btn btn-primary" %>
-      <%= image_tag @member.display_image if @member.image.attached? %>
       <span class="image">
         <%= f.file_field :image, onchange: 'previewImage(preview)', accept: "image/jpeg, image/gif, image/png" %>
+        <% if @member.image.attached? %>
+          <%= image_tag @member.display_image, id: 'preview' %>
+        <% else %>
+          <%= image_tag "default.png", id: 'preview' %>
+        <% end %>
       </span>
+      <script>
+    　　function previewImage(preview) {
+          const target = this.event.target;     
+          const file = target.files[0];       
+          const reader = new FileReader(); 
+          reader.onloadend = function() {     
+            preview.src = reader.result;       
+          };
+        if (file) {
+          reader.readAsDataURL(file);      
+        } else {
+          preview.src = "";
+          }
+        }
+　　 </script>
     <% end %>

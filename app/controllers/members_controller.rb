@@ -62,4 +62,5 @@ class MembersController < ApplicationController
                           :department, :director, :word, :addmission_date, :image)
     end
     
+    
 end

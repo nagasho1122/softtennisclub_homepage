@@ -3,10 +3,12 @@ require "test_helper"
 class MembersControllerTest < ActionDispatch::IntegrationTest
   
   def setup
+    image = Rack::Test::UploadedFile.new("test/fixtures/default.png", "image/png") 
     @params = { member: {name:"横国太郎", position: "後衛", from: "横浜高校", 
                   text: "生粋のハマっ子。最近パチンコにハマってるカス野郎",
                   department: "教育学部", director: "副将", 
-                  word: "どこだよそれFランジャーン", addmission_date: DateTime.now}}
+                  word: "どこだよそれFランジャーン", 
+                  addmission_date: DateTime.now, image: image}}
     @member = members(:example_member)
     @other_member = members(:example_member_destroy)
   end

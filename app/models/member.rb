@@ -8,7 +8,7 @@ class Member < ApplicationRecord
   validates :director, length: {maximum: 15}
   validates :word, presence: true, length: {maximum: 155}
   validates :addmission_date, presence: true
-  validates :image, content_type: { in: %w[image/jpeg image/gif image/png],
+  validates :image, presence: true, content_type: { in: %w[image/jpeg image/gif image/png],
                                       message: "画像ファイルを選択してください。" },
                       size:         { less_than: 5.megabytes,
                                       message: "容量が大きすぎます。" }
