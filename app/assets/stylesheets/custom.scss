@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
-@import "bootstrap";
+@import "bootstrap-custom";
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
 
 /* mixins, variables, etc. */
 
@@ -12,8 +13,8 @@ $gray-medium-light: #eaeaea;
 }
 /* universal */
 
-body {
-  padding-top: 60px;
+body{
+  height: 100%;
 }
 
 section {
@@ -61,18 +62,92 @@ p {
 
 /* header */
 
+.navbar{
+  width: 100%;
+  background:rgba(0,0,0,0);
+  position: absolute;
+  box-shadow: 0 80px 80px -70px #ffffff inset;
+}
+
+#list-item{
+  color:black;
+  &:hover{
+  }
+}
+
+#dropdown-item{
+  color:black;
+  margin-right: 45px;
+  opacity: 0.8;
+  &:hover, &:focus{
+    opacity: 1;
+  }
+}
+
 #logo {
+  font-family: 'Noto Sans JP', sans-serif;
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
+  margin-left: 15px;
+  font-size: 2.5em;
+  color: black;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
+  vertical-align: middle;
   &:hover {
-    color: white;
     text-decoration: none;
+  }
+}
+
+.navbar{
+  margin-bottom: 0px;
+  padding: 20px 0 20px 0;
+}
+/* home */
+#home-image{
+  box-sizing: border-box;
+  height: 100vh;
+  background-image: image-url('home_image_6.JPG');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container-cancellation {
+  margin-left : 0;
+  margin-right: 0;
+}
+
+@media screen and (min-width: 576px) {
+  .container-cancellation {
+    margin-left : calc(-0.5 * (100vw - 540px));
+    margin-right: calc(-0.5 * (100vw - 540px));
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container-cancellation {
+    margin-left : calc(-0.5 * (100vw - 720px));
+    margin-right: calc(-0.5 * (100vw - 720px));
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container-cancellation {
+    margin-left : calc(-0.5 * (100vw - 960px));
+    margin-right: calc(-0.5 * (100vw - 960px));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container-cancellation {
+    margin-left : calc(-0.5 * (100vw - 1140px));
+    margin-right: calc(-0.5 * (100vw - 1140px));
   }
 }
 
