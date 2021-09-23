@@ -14,7 +14,7 @@ class Member < ApplicationRecord
                                       message: "容量が大きすぎます。" }
                                       
   def display_image
-    image.variant(resize_to_limit: [300, 300])
+    image.variant(resize_to_limit: [200, 220])
   end
   
 end

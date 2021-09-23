@@ -2,48 +2,69 @@
   <h1>部員紹介</h1>
 </div>
 
-<% if !@members_fourth.blank? %>
-  <h2>4年</h2>
-  <% @members_fourth.each do |member| %>
-    <ul class="members_fourth">
-      <li class="member">
-        <%= member.name %>
-        <%= image_tag member.display_image if member.image.attached? %>
-      </li>
-    </ul>
- <% end %>
-<% end %>
-<% if !@members_third.blank? %>
-  <h2>3年</h2>
-  <% @members_third.each do |member| %>
-    <ul class="members_third">
-      <li class="member">
-        <%= member.name %>
-        <%= image_tag member.display_image if member.image.attached? %>
-      </li>
-    </ul>
+<div class="member-container" >
+  <% if !@members_fourth.blank? %>
+    <h2 class="member-grade" >4年</h2>
+    <div class="flex-container" >
+      <% @members_fourth.each do |member| %>
+        <div class="member-box">
+          <div class="member-top">
+            <div class="member-image"><%= image_tag member.display_image if member.image.attached? %></div>
+          </div>
+          <div class="member-bottom">
+            <h3 class="member-name"><%= member.name %></h3>
+            <h3 class="member-position"><%= member.position %></h3>
+          </div>
+        </div>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
-<% if !@members_second.blank? %>
-  <h2>2年</h2>
-  <% @members_second.each do |member| %>
-    <ul class="members_second">
-      <li class="member">
-        <%= member.name %>
-        <%= image_tag member.display_image if member.image.attached? %>
-      </li>
-    </ul>
+  <% if !@members_third.blank? %>
+    <h2 class="member-grade">3年</h2>
+    <div class="flex-container" >
+      <% @members_third.each do |member| %>
+        <div class="member-box">
+          <div class="member-top">
+            <div class="member-image"><%= image_tag member.display_image if member.image.attached? %></div>
+          </div>
+          <div class="member-bottom">
+            <h3 class="member-name"><%= member.name %></h3>
+            <h3 class="member-position"><%= member.position %></h3>
+          </div>
+        </div>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
-<% if !@members_one.blank? %>
-  <h2>1年</h2>
-  <% @members_one.each do |member| %>
-    <ul class="members_one">
-      <li class="member">
-        <%= member.name %>
-        <%= image_tag member.display_image if member.image.attached? %>
-      </li>
-    </ul>
+  <% if !@members_second.blank? %>
+    <h2 class="member-grade">2年</h2>
+    <div class="flex-container" >
+      <% @members_second.each do |member| %>
+        <div class="member-box">
+          <div class="member-top">
+            <div class="member-image"><%= image_tag member.display_image if member.image.attached? %></div>
+          </div>
+          <div class="member-bottom">
+            <h3 class="member-name"><%= member.name %></h3>
+            <h3 class="member-position"><%= member.position %></h3>
+          </div>
+        </div>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
-    
+  <% if !@members_one.blank? %>
+    <h2 class="member-grade">1年</h2>
+    <div class="flex-container" >
+      <% @members_one.each do |member| %>
+        <div class="member-box">
+          <div class="member-top">
+            <div class="member-image"><%= image_tag member.display_image if member.image.attached? %></div>
+          </div>
+          <div class="member-bottom">
+            <h3 class="member-name"><%= member.name %></h3>
+            <h3 class="member-position"><%= member.position %></h3>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
