@@ -40,9 +40,10 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 3em;
-  letter-spacing: -2px;
+  letter-spacing: 1px;
   margin-bottom: 30px;
   text-align: center;
+  color: white;
 }
 
 h2 {
@@ -66,7 +67,7 @@ p {
   width: 100%;
   background:rgba(0,0,0,0);
   position: absolute;
-  box-shadow: 0 80px 80px -70px #ffffff inset;
+  
 }
 
 #list-item{
@@ -105,10 +106,8 @@ p {
   padding: 20px 0 20px 0;
 }
 /* home */
-#home-image{
+.page-top-image{
   box-sizing: border-box;
-  height: 100vh;
-  background-image: image-url('home_image_6.JPG');
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,6 +115,12 @@ p {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+#home-image{
+  height: 100vh;
+  background-image: image-url('home_image_6.JPG');
+  box-shadow: 0 80px 80px -70px #ffffff inset;
 }
 
 .container-cancellation {
@@ -150,6 +155,42 @@ p {
     margin-right: calc(-0.5 * (100vw - 1140px));
   }
 }
+
+
+/* result_index */
+#result-image{
+  height: 50vh;
+  background-image: image-url('result_index_image.JPG');
+  box-shadow: 0 80px 80px -50px #ffffff inset;
+}
+
+/* contact */
+#contact-image{
+  height: 50vh;
+  background-image: image-url('contact.jpg');
+  box-shadow: 0 80px 80px -60px #ffffff inset;
+}
+
+/* member */
+#member-image{
+  height: 50vh;
+  background-image: image-url('member_page2.JPG');
+  box-shadow: 0 80px 80px -50px #ffffff inset;
+}
+
+/* action */
+#action-image{
+  height: 50vh;
+  background-image: image-url('action_page.JPG');
+  box-shadow: 0 80px 80px -70px #ffffff inset;
+}
+
+/* setting-pages-all  */
+#setting-option{
+  height: 34vh;
+  background-image: image-url('setting3.png');
+}
+
 
 /* footer */
 
