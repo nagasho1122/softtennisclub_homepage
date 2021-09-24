@@ -6,6 +6,10 @@
 
 $gray-medium-light: #eaeaea;
 
+$theme-color: #65CC33;
+
+$theme-color-hover: #14A408;
+
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -167,12 +171,6 @@ img{
 }
 
 
-/* result_index */
-#result-image{
-  height: 50vh;
-  background-image: image-url('result_index_image.JPG');
-  box-shadow: 0 80px 80px -50px #ffffff inset;
-}
 
 /* contact */
 #contact-image{
@@ -243,9 +241,6 @@ img{
   background-image: image-url('action_page.JPG');
   box-shadow: 0 80px 80px -70px #ffffff inset;
 }
-.action-container{
-  margin-top: 30px;
-}
 .action-text{
   font-size: 1.2em;
   letter-spacing: 3px;
@@ -282,6 +277,110 @@ img{
   }
 }
 
+/* result_index */
+#result-image{
+  height: 50vh;
+  background-image: image-url('result_index_image.JPG');
+  box-shadow: 0 80px 80px -50px #ffffff inset;
+}
+
+.result-container{
+  margin-top: 20px;
+  padding: 30px 0 1px 0;
+}
+.results-lists{
+  padding: 0;
+}
+
+.result-list{
+  height: 100px;
+  list-style: none;
+  margin: 0 20px 40px 20px;
+  background-color: #F3F3F3;
+}
+
+  
+.result-file{
+  height: 100px;
+  background-color: $theme-color;
+  color: white;
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  &:hover :active{
+    background-color: $theme-color-hover;
+  }
+}
+
+
+.result-file-link{
+  color: white;
+  &:hover{
+    color: white;
+  }
+}
+
+.tennis-icon{
+   position:absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.result{
+  position:absolute;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 1em;
+}
+
+.result-name{
+  color: black;
+  height: 100px;
+  font-size: 1.5em;
+  display:table;
+  text-align:center;
+}
+
+.result-name-text{
+  display:table-cell;
+  vertical-align:middle;
+}
+
+.result-box a:hover{
+  .result-file{
+    background-color: $theme-color-hover;
+  }
+  .result-name{
+    color: $theme-color;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .result-list{
+  height: 150px;
+  }
+  .result-name{
+    height: 50px;
+    font-size: 0.7em;
+  }
+}
+@media screen and (max-width: 992px) {
+  .result-name{
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .result-name{
+    font-size: 1.2em;
+  }
+}
 
 /* footer */
 

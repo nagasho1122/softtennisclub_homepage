@@ -2,15 +2,30 @@
   <h1>大会結果</h1>
 </div>
 
+<div class="sub-container result-container">
 
-<ul class="users">
-  <% @results.each do |result| %>
-    <li>
-      <% if result.document.attached? %>
-        <%= link_to result.name, rails_blob_path(result.document) %>
-      <% else %>
-        <%= result.name %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+  <ul class="results-lists">
+    <% @results.each do |result| %>
+      <li class="result-list">
+        <div class="container-fluid result-box">
+          <a href=<%= rails_blob_path(result.document) %> class="result-file-link" > 
+            <div class="row">
+              <% if result.document.attached? %>
+                <div class="result-file col-sm-4">
+                  <span class="material-icons tennis-icon">sports_tennis</span>
+                  <div class="result">RESULT</div>
+                </div>
+                <div class="result-name col-sm-8">
+                  <div class="result-name-text">
+                    <%= result.name %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </a>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  
+</div>
