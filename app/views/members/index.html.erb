@@ -2,9 +2,9 @@
   <h1>部員紹介</h1>
 </div>
 
-<div class="member-container" >
+<div class="sub-container" >
   <% if !@members_fourth.blank? %>
-    <h2 class="member-grade" >4年</h2>
+    <h2 class="sub-title" >4年</h2>
     <div class="flex-container" >
       <% @members_fourth.each do |member| %>
         <div class="member-box">
@@ -20,7 +20,7 @@
     </div>
   <% end %>
   <% if !@members_third.blank? %>
-    <h2 class="member-grade">3年</h2>
+    <h2 class="sub-title">3年</h2>
     <div class="flex-container" >
       <% @members_third.each do |member| %>
         <div class="member-box">
@@ -36,7 +36,7 @@
     </div>
   <% end %>
   <% if !@members_second.blank? %>
-    <h2 class="member-grade">2年</h2>
+    <h2 class="sub-title">2年</h2>
     <div class="flex-container" >
       <% @members_second.each do |member| %>
         <div class="member-box">
@@ -52,7 +52,7 @@
     </div>
   <% end %>
   <% if !@members_one.blank? %>
-    <h2 class="member-grade">1年</h2>
+    <h2 class="sub-title">1年</h2>
     <div class="flex-container" >
       <% @members_one.each do |member| %>
         <div class="member-box">
