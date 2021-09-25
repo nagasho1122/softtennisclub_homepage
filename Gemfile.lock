@@ -253,7 +253,7 @@ PLATFORMS
 DEPENDENCIES
   active_storage_validations
   bootsnap (>= 1.4.4)
-  bootstrap-sass
+  bootstrap-sass (= 3.4.1)
   byebug
   capybara
   guard

@@ -1,2 +1,26 @@
 <div class="center container-cancellation page-top-image" id="home-image">
 </div>
+<div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">Primary</button>
+      <div class="dropdown-menu">
+          <a class="" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+      </div>
+</div>
+<li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdown-item">
+                  編集者メニュー <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu ">
+                  <li><%= link_to "部員追加", new_member_path, id: "list-item" %></li>
+                  <li><%= link_to "大会結果追加", new_result_path, id: "list-item" %></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "ログアウト", logout_path, method: :delete %>
+                  </li>
+                </ul>
+              </li>
