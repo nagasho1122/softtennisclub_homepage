@@ -19,7 +19,22 @@ $(document).ready(function(){
 });
 
 $(function () {
-  $('.title-bars').on('click', function () {        // js-btnクラスをクリックすると、
-    $('.nav').toggleClass('open'); // メニューとバーガーの線にopenクラスをつけ外しする
-  })
+  $('.title-bars').click(function(){
+    // メニューバーが開かれているなら
+    console.log($('.nav').hasClass('open'))
+    if($('.nav').hasClass('open')){
+      $('.nav').removeClass('open');
+
+      // Font Awesomeを×にする
+      $('.title-bars').children('i').removeClass().addClass('fas fa-bars');
+
+    }
+    // メニューバーが開かれていないなら
+    else{
+      $('.nav').addClass('open');
+
+      // Font Awesomeをメニューバーにする
+      $('.title-bars').children('i').removeClass().addClass('fas fa-times');
+    }
+    })
 });

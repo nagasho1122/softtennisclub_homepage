@@ -3,13 +3,13 @@
 </a>
 <header class="navbar ">
       <div class="container-fluid">
-        <button class="title-bars"><i class="fas fa-bars"></i></button>
+        <button class="title-bars bars"><i class="fas fa-bars"></i></button>
         <nav>
           <ul class="nav navbar-nav navbar-right" >
-            <li><%= link_to "チーム紹介", action_path , id: "list-item", data: {"turbolinks" => false} %></li>
-            <li><%= link_to "部員紹介",   members_path, id: "list-item", data: {"turbolinks" => false} %></li>
-            <li><%= link_to "大会結果", results_path, id: "list-item" , data: {"turbolinks" => false}%></li>
-            <li><%= link_to "お問い合わせ・アクセス", contact_path , id: "list-item", data: {"turbolinks" => false}%></li>
+            <li class="nav-item"><%= link_to "チーム紹介", action_path , id: "list-item", data: {"turbolinks" => false} %></li>
+            <li class="nav-item"><%= link_to "部員紹介",   members_path, id: "list-item", data: {"turbolinks" => false} %></li>
+            <li class="nav-item"><%= link_to "大会結果", results_path, id: "list-item" , data: {"turbolinks" => false}%></li>
+            <li class="nav-item"><%= link_to "お問い合わせ・アクセス", contact_path , id: "list-item", data: {"turbolinks" => false}%></li>
             <% if session[:log_in] %>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdown-item">

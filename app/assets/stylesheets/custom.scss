@@ -223,6 +223,9 @@ img{
   .fa-bars{
     font-size: 50px;
   }
+  .fa-times{
+    font-size: 50px;
+  }
   &:hover{
     color: $theme-color;
   }
@@ -240,8 +243,11 @@ img{
     height: 330px;
     display: flex;
     flex-direction: column;
-    background-color: #F3F3F3;
+    background-color: #FFFFFF;
     z-index: 6;
+    .nav-item{
+      border-bottom: 1px solid #F3F3F3;
+    }
   }
   .nav.open{
     right: 0;
