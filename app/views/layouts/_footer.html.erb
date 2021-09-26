@@ -1,26 +1,27 @@
 <div class="under container-cancellation">
       <div class="container-lg">
         <div class="row">
-          <div class="col-2"></div>
           <div class="col-lg-2 col-sm-4">
             <div class="under-subtitle">メニュー</div>
             <ul class="under-lists yazirusis">
-              <li class="under-list yazirusi"><a href=<%= action_path  %>>チーム紹介</a></li>
-              <li class="under-list yazirusi"><a href=<%= members_path  %>>メンバー紹介</a></li>
-              <li class="under-list yazirusi"><a href=<%= results_path  %>>大会結果</a></li>
-              <li class="under-list yazirusi"><a href=<%= contact_path  %>>お問い合わせ・アクセス</a></li>
+              <li class="under-list yazirusi"><a href=<%= action_path  %> data-turbolinks="false">チーム紹介</a></li>
+              <li class="under-list yazirusi"><a href=<%= members_path  %> data-turbolinks="false">メンバー紹介</a></li>
+              <li class="under-list yazirusi"><a href=<%= results_path  %> data-turbolinks="false">大会結果</a></li>
+              <li class="under-list yazirusi"><a href=<%= contact_path  %> data-turbolinks="false">お問い合わせ・アクセス</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-sm-4">
             <div class="under-subtitle">ソーシャルメディア</div>
             <ul class="under-lists sns">
-              <li class="under-list"><a href="https://twitter.com/ynusofttennis"><i class="fab fa-twitter"></i>Twitter</a></li>
-              <li class="under-list"><a href="https://www.instagram.com/ynusofttennis/"><i class="fab fa-instagram"></i>Instagram</a></li>
+              <li class="under-list"><a href="https://twitter.com/ynusofttennis" data-turbolinks="false"><i class="fab fa-twitter"></i>Twitter</a></li>
+              <li class="under-list"><a href="https://www.instagram.com/ynusofttennis/" data-turbolinks="false"><i class="fab fa-instagram"></i>Instagram</a></li>
             </ul>
           </div>
           
-          <div class="col-lg-5 under-image-box">
-            
+          <div class="col-lg-8 col-sm-4 under-image-box">
+            <a href = <%= root_path %> class="logo-box"data-turbolinks="false">
+              <img class="icon-image-footer"  src="/assets/home_icon2.png">
+            </a>
           </div>
         </div>
       </div>

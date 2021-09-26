@@ -1,20 +1,23 @@
+<a href = <%= root_path %> class="logo-box" data-turbolinks="false">
+    <img class="icon-image" id="logo" src="/assets/home_icon2.png">
+</a>
 <header class="navbar ">
       <div class="container-fluid">
-        <%= link_to "横浜国立大学ソフトテニス部", root_path , id: "logo" %>
+        <button class="title-bars"><i class="fas fa-bars"></i></button>
         <nav>
           <ul class="nav navbar-nav navbar-right" >
-            <li><%= link_to "チーム紹介", action_path , id: "list-item" %></li>
-            <li><%= link_to "部員紹介",   members_path, id: "list-item" %></li>
-            <li><%= link_to "大会結果", results_path, id: "list-item" %></li>
-            <li><%= link_to "お問い合わせ・アクセス", contact_path , id: "list-item"%></li>
+            <li><%= link_to "チーム紹介", action_path , id: "list-item", data: {"turbolinks" => false} %></li>
+            <li><%= link_to "部員紹介",   members_path, id: "list-item", data: {"turbolinks" => false} %></li>
+            <li><%= link_to "大会結果", results_path, id: "list-item" , data: {"turbolinks" => false}%></li>
+            <li><%= link_to "お問い合わせ・アクセス", contact_path , id: "list-item", data: {"turbolinks" => false}%></li>
             <% if session[:log_in] %>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdown-item">
                   編集者メニュー <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu ">
-                  <li><%= link_to "部員追加", new_member_path, id: "list-item" %></li>
-                  <li><%= link_to "大会結果追加", new_result_path, id: "list-item" %></li>
+                  <li><%= link_to "部員追加", new_member_path, id: "list-item", data: {"turbolinks" => false}%></li>
+                  <li><%= link_to "大会結果追加", new_result_path, id: "list-item", data: {"turbolinks" => false} %></li>
                   <li class="divider"></li>
                   <li>
                     <%= link_to "ログアウト", logout_path, method: :delete %>
@@ -22,7 +25,7 @@
                 </ul>
               </li>
             <% else %>
-              <li><%= link_to "編集者ログイン", login_path, id: "list-item" %></li>
+              <li><%= link_to "編集者ログイン", login_path, id: "list-item", data: {"turbolinks" => false} %></li>
             <% end %>
           </ul>
         </nav>

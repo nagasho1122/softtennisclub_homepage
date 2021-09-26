@@ -17,3 +17,9 @@ ActiveStorage.start()
 $(document).ready(function(){
     $('.dropdown-toggle').dropdown();
 });
+
+$(function () {
+  $('.title-bars').on('click', function () {        // js-btnクラスをクリックすると、
+    $('.nav').toggleClass('open'); // メニューとバーガーの線にopenクラスをつけ外しする
+  })
+});

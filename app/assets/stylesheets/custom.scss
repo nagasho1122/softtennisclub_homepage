@@ -115,19 +115,11 @@ img{
 }
 
 #logo {
-  font-family: 'Noto Sans JP', sans-serif;
-  float: left;
-  margin-right: 10px;
-  margin-left: 15px;
-  font-size: 2.5em;
-  color: black;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  font-weight: bold;
-  vertical-align: middle;
-  &:hover {
-    text-decoration: none;
-  }
+  width: 250px;
+  height: auto;
+  position: absolute;
+  left: 30px;
+  z-index: 5;
 }
 
 .navbar{
@@ -220,6 +212,42 @@ img{
   .container-cancellation {
     margin-left : calc(-0.5 * (100vw - 1140px));
     margin-right: calc(-0.5 * (100vw - 1140px));
+  }
+}
+
+.title-bars{
+  color: $theme-color;
+  border: none;
+  z-index: 10;
+  position: fixed;
+  .fa-bars{
+    font-size: 50px;
+  }
+  &:hover{
+    color: $theme-color;
+  }
+  top: 32px;
+  right: 16px;
+  display: none;
+}
+
+
+@media screen and (max-width: 900px) {
+  .nav{
+    position: fixed;
+    right: -70%;
+    width: 200px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    background-color: #F3F3F3;
+    z-index: 6;
+  }
+  .nav.open{
+    right: 0;
+  }
+  .title-bars{
+    display: inline-block;
   }
 }
 
@@ -565,6 +593,11 @@ img{
   background-image: image-url('result_index_image.JPG');
   box-shadow: 0 80px 80px -50px #ffffff inset;
 }
+@media screen and (max-width: 768px) {
+  #result-image{
+    background-image: image-url('result2.JPG');
+  }
+}
 
 .result-container{
   margin-top: 20px;
@@ -667,6 +700,10 @@ img{
  * top-btn
  * -------------------------------- */
  
+ .top-btn-box{
+   margin-top: 60px;
+ }
+ 
  .top-link{
    display: block;
    background-color: #FFF;
@@ -756,6 +793,16 @@ img{
 .under-list i{
   padding-right:12px;
 }
+.under-image-box{
+  text-align: center;
+}
+
+.icon-image-footer{
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+}
+
 
 @media screen and (max-width: 576px) {
   .under{
