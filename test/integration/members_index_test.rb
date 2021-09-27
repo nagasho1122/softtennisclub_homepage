@@ -15,11 +15,11 @@ class MembersIndexTest < ActionDispatch::IntegrationTest
     assert_template "members/index"
     assert_equal Member.count, 4
     assert_equal @member1.addmission_date, DateTime.new(2021, 4, 1, 0, 0, 0)
-    assert_select "li.member", count: 4
+    assert_select "div.member-box", count: 4
     delete member_path(@member2)
     assert_redirected_to members_url
     follow_redirect!
-    assert_select "li.member", count: 3
+    assert_select "div.member-box", count: 3
   end
   
 end
