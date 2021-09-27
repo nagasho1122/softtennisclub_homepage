@@ -32,3 +32,11 @@
     </div>
   </body>
 </html>
+<script>
+  $(function(){
+    $('.top-link').click(function () {
+        //id名#pagetopがクリックされたら、以下の処理を実行
+        $("html,body").animate({scrollTop:0},"300");
+    });
+  });
+</script>

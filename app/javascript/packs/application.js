@@ -21,7 +21,6 @@ $(document).ready(function(){
 $(function () {
   $('.title-bars').click(function(){
     // メニューバーが開かれているなら
-    console.log($('.nav').hasClass('open'))
     if($('.nav').hasClass('open')){
       $('.nav').removeClass('open');
 

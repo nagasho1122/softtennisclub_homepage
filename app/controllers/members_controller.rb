@@ -55,11 +55,20 @@ class MembersController < ApplicationController
     redirect_to members_path
   end
   
+  #def show
+   # @clickmember = Member.find(show_params[:id])
+    #render json: @clickmember
+  #end
+  
   private
   
     def member_params
       params.require(:member).permit(:name, :position, :from,:text,
                           :department, :director, :word, :addmission_date, :image)
+    end
+    
+    def show_params
+      params.require(:membercard).permit(:id, :grade)
     end
     
     
