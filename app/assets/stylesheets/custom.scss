@@ -127,21 +127,29 @@ img{
   padding: 20px 0 20px 0;
 }
 /* home */
-.page-top-image{
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-attachment: fixed;
+
+
+#home-image::before {
+  background-image: image-url('home_image_6.JPG');
+  background-size: cover;/* cover指定 */
   background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  content: "";/* 画像を表示させる為に必要*/
+  display: block;/*ブロックボックスで表示*/
+  position: fixed;/* 擬似要素全体を固定 */
+  width: 100%;/* 横幅を画面全体 */
+  height: 100vh;/* 縦幅を画面全体 */
+  top: 0;/* 上からの配置を0 */
+  left: 0;/* 左からの配置を0 */
+  z-index: -1;/*背景画像になるように重ね順を-1*/
 }
 
 #home-image{
   height: 100vh;
-  background-image: image-url('home_image_6.JPG');
   box-shadow: 0 80px 80px -70px #ffffff inset;
+}
+.under-bg{
+  background-color: #F3F3F3;
+  padding-bottom: 30px;
 }
 
 .container-cancellation {
@@ -404,14 +412,36 @@ img{
 
 /* contact */
 
-.contact-container{
-  padding-bottom: 30px;
+
+#contact-image::before{
+  background-image: image-url('contact.jpg');
+  background-size: cover;/* cover指定 */
+  background-position: center top;
+  content: "";/* 画像を表示させる為に必要*/
+  display: block;/*ブロックボックスで表示*/
+  position: fixed;/* 擬似要素全体を固定 */
+  width: 100%;/* 横幅を画面全体 */
+  height: 50vh;/* 縦幅を画面全体 */
+  top: 0;/* 上からの配置を0 */
+  left: 0;/* 左からの配置を0 */
+  z-index: -1;/*背景画像になるように重ね順を-1*/
 }
 
 #contact-image{
   height: 50vh;
-  background-image: image-url('contact.jpg');
   box-shadow: 0 80px 80px -60px #ffffff inset;
+  h1{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+  }
+}
+
+.contact-container{
+  padding-bottom: 30px;
 }
 
 .map-box{
@@ -502,10 +532,32 @@ img{
 }
 
 /* member */
+#member-image:before{
+  background-image: image-url('member_page.JPG');
+  background-size: cover;/* cover指定 */
+  background-position: center;
+  background-repeat:no-repeat;
+  content: "";/* 画像を表示させる為に必要*/
+  display: block;/*ブロックボックスで表示*/
+  position: fixed;/* 擬似要素全体を固定 */
+  width: 100%;/* 横幅を画面全体 */
+  height: 50vh;/* 縦幅を画面全体 */
+  top: 0;/* 上からの配置を0 */
+  left: 0;/* 左からの配置を0 */
+  z-index: -1;/*背景画像になるように重ね順を-1*/
+}
+
 #member-image{
   height: 50vh;
-  background-image: image-url('member_page2.JPG');
   box-shadow: 0 80px 80px -50px #ffffff inset;
+  h1{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+  }
 }
 .flex-container{
   display: flex;
@@ -751,10 +803,32 @@ img{
 
 
 /* action */
+
+#action-image:before{
+  background-image: image-url('team_home.JPG');
+  background-size: cover;/* cover指定 */
+  background-position: center;
+  background-repeat:no-repeat;
+  content: "";/* 画像を表示させる為に必要*/
+  display: block;/*ブロックボックスで表示*/
+  position: fixed;/* 擬似要素全体を固定 */
+  width: 100%;/* 横幅を画面全体 */
+  height: 50vh;/* 縦幅を画面全体 */
+  top: 0;/* 上からの配置を0 */
+  left: 0;/* 左からの配置を0 */
+  z-index: -1;/*背景画像になるように重ね順を-1*/
+}
 #action-image{
   height: 50vh;
-  background-image: image-url('team.jpg');
   box-shadow: 0 80px 80px -60px #ffffff inset;
+  h1{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+  }
 }
 .action-text{
   font-size: 1.2em;
@@ -770,10 +844,33 @@ img{
 }
 
 /* setting-pages-all  */
-#setting-option{
-  height: 34vh;
-  background-image: image-url('setting3.png');
+#setting-option:before{
+  background-image: image-url('home_sub.JPG');
+  background-size: cover;/* cover指定 */
+  background-position: center;
+  background-repeat:no-repeat;
+  content: "";/* 画像を表示させる為に必要*/
+  display: block;/*ブロックボックスで表示*/
+  position: fixed;/* 擬似要素全体を固定 */
+  width: 100%;/* 横幅を画面全体 */
+  height: 50vh;/* 縦幅を画面全体 */
+  top: 0;/* 上からの配置を0 */
+  left: 0;/* 左からの配置を0 */
+  z-index: -1;/*背景画像になるように重ね順を-1*/
 }
+#setting-option{
+  height: 50vh;
+  box-shadow: 0 80px 80px -60px #ffffff inset;
+  h1{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .action-lists{
   padding-left: 20px;
@@ -796,13 +893,37 @@ img{
 }
 
 /* result_index */
+
+#result-image:before{
+  background-image: image-url('result_index_image.JPG');
+  background-size: cover;/* cover指定 */
+  background-position: center 30%;
+  background-repeat:no-repeat;
+  content: "";/* 画像を表示させる為に必要*/
+  display: block;/*ブロックボックスで表示*/
+  position: fixed;/* 擬似要素全体を固定 */
+  width: 100%;/* 横幅を画面全体 */
+  height: 50vh;/* 縦幅を画面全体 */
+  top: 0;/* 上からの配置を0 */
+  left: 0;/* 左からの配置を0 */
+  z-index: -1;/*背景画像になるように重ね順を-1*/
+}
+
 #result-image{
   height: 50vh;
-  background-image: image-url('result_index_image.JPG');
-  box-shadow: 0 80px 80px -50px #ffffff inset;
+  box-shadow: 0 80px 80px -60px #ffffff inset;
+  h1{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+  }
 }
+
 @media screen and (max-width: 768px) {
-  #result-image{
+  #result-image:before{
     background-image: image-url('result2.JPG');
   }
 }

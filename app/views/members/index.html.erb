@@ -2,149 +2,154 @@
   <h1>部員紹介</h1>
 </div>
 
-<div class="fixed-bg container-cancellation">
-</div>
-<button class="close-btn"><i class="fas fa-times"></i></button>
-<div class="fixed-box">
-  <div class="member-card-box container-fluid">
-    <div class="row">
-      <div class="col-sm-3 member-card-left">
-        <div class="member-image member-image-card"><img class="inf-image"src=""></div>
+<div class="under-bg container-cancellation">
+    <div class="container">
+      
+      <div class="fixed-bg container-cancellation">
       </div>
-      <div class="col-sm-9 member-card-right">
-        <ul class="member-informations">
-          <li class="member-inf">
-            <div class="inf-left">名前：</div>
-            <div class="inf-right inf-name"></div>
-          </li>
-          <li class="member-inf">
-            <div class="inf-left">ポジション：</div>
-            <div class="inf-right inf-position"></div>
-          </li>
-          <li class="member-inf">
-            <div class="inf-left">学年：</div>
-            <div class="inf-right inf-grade"></div>
-          </li>
-          <li class="member-inf">
-            <div class="inf-left">役職：</div>
-            <div class="inf-right inf-director"></div>
-          </li>
-          <li class="member-inf">
-            <div class="inf-left">所属：</div>
-            <div class="inf-right inf-department"></div>
-          </li>
-          <li class="member-inf">
-            <div class="inf-left">出身：</div>
-            <div class="inf-right inf-from"></div>
-          </li>
-        </ul>
+      <button class="close-btn"><i class="fas fa-times"></i></button>
+      <div class="fixed-box">
+        <div class="member-card-box container-fluid">
+          <div class="row">
+            <div class="col-sm-3 member-card-left">
+              <div class="member-image member-image-card"><img class="inf-image"src=""></div>
+            </div>
+            <div class="col-sm-9 member-card-right">
+              <ul class="member-informations">
+                <li class="member-inf">
+                  <div class="inf-left">名前：</div>
+                  <div class="inf-right inf-name"></div>
+                </li>
+                <li class="member-inf">
+                  <div class="inf-left">ポジション：</div>
+                  <div class="inf-right inf-position"></div>
+                </li>
+                <li class="member-inf">
+                  <div class="inf-left">学年：</div>
+                  <div class="inf-right inf-grade"></div>
+                </li>
+                <li class="member-inf">
+                  <div class="inf-left">役職：</div>
+                  <div class="inf-right inf-director"></div>
+                </li>
+                <li class="member-inf">
+                  <div class="inf-left">所属：</div>
+                  <div class="inf-right inf-department"></div>
+                </li>
+                <li class="member-inf">
+                  <div class="inf-left">出身：</div>
+                  <div class="inf-right inf-from"></div>
+                </li>
+              </ul>
+            </div>
+            <div class="information-text inf-long">
+              <div class="inf-long-left"><div class="left-text">紹介文：</div></div>
+              <duv class="inf-long-right" ><div class="right-text inf-text"></div></duv>
+            </div>
+            <div class="information-word inf-long">
+              <div class="inf-long-left"><div class="left-text">ひとこと：</div></div>
+              <duv class="inf-long-right" ><div class="right-text inf-word"></div></duv>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="information-text inf-long">
-        <div class="inf-long-left"><div class="left-text">紹介文：</div></div>
-        <duv class="inf-long-right" ><div class="right-text inf-text"></div></duv>
-      </div>
-      <div class="information-word inf-long">
-        <div class="inf-long-left"><div class="left-text">ひとこと：</div></div>
-        <duv class="inf-long-right" ><div class="right-text inf-word"></div></duv>
+      
+      <div class="sub-container" >
+        <% if !@members_fourth.blank? %>
+          <h2 class="sub-title" >4年</h2>
+          <div class="flex-container" >
+            <% @members_fourth.each do |member| %>
+              <div class="member-box <%= ' member-box-loggedin' if session[:log_in] %>" 
+              data-name="<%= member.name %>" data-grade="4年" data-position="<%= member.position %>"
+              data-from="<%= member.from%>" data-text="<%= member.text %>" data-department="<%= member.department %>"
+              data-director= "<%=member.director %>" data-word="<%= member.word %>" data-image="<%= member.display_image %>">
+                <div class="member-top">
+                  <div class="member-image"><%= image_tag member.display_image if member.image.attached? %></div>
+                </div>
+                <div class="member-bottom">
+                  <h3 class="member-name"><%= member.name %></h3>
+                  <h3 class="member-position"><%= member.position %></h3>
+                  <% if session[:log_in] %>
+                    <%= link_to "削除", member, method: :delete, data: { confirm: "本当に削除しますか?"}%>
+                    <%= link_to "編集", edit_member_path(member.id) , data: {"turbolinks" => false}%>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+        <% if !@members_third.blank? %>
+          <h2 class="sub-title">3年</h2>
+          <div class="flex-container" >
+            <% @members_third.each do |member| %>
+              <div class="member-box <%= ' member-box-loggedin' if session[:log_in] %>" 
+              data-name="<%= member.name %>" data-grade="3年" data-position="<%= member.position %>"
+              data-from="<%= member.from%>" data-text="<%= member.text %>" data-department="<%= member.department %>"
+              data-director= "<%=member.director %>" data-word="<%= member.word %>" data-image="<%= member.display_image %>">
+                <div class="member-top">
+                  <div class="member-image"><%= image_tag member.display_image if member.image.attached? %></div>
+                </div>
+                <div class="member-bottom">
+                  <h3 class="member-name"><%= member.name %></h3>
+                  <h3 class="member-position"><%= member.position %></h3>
+                  <% if session[:log_in] %>
+                    <%= link_to "削除", member, method: :delete, data: { confirm: "本当に削除しますか?"}%>
+                    <%= link_to "編集", edit_member_path(member.id) , data: {"turbolinks" => false}%>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+        <% if !@members_second.blank? %>
+          <h2 class="sub-title">2年</h2>
+          <div class="flex-container" >
+            <% @members_second.each do |member| %>
+              <div class="member-box <%= ' member-box-loggedin' if session[:log_in] %>"
+              data-name="<%= member.name %>" data-grade="2年" data-position="<%= member.position %>"
+              data-from="<%= member.from%>" data-text="<%= member.text %>" data-department="<%= member.department %>"
+              data-director= "<%=member.director %>" data-word="<%= member.word %>" data-image="<%= member.display_image %>">
+                <div class="member-top">
+                  <div class="member-image"><%= image_tag member.display_image if member.image.attached? %></div>
+                </div>
+                <div class="member-bottom">
+                  <h3 class="member-name"><%= member.name %></h3>
+                  <h3 class="member-position"><%= member.position %></h3>
+                  <% if session[:log_in] %>
+                    <%= link_to "削除", member, method: :delete, data: { confirm: "本当に削除しますか?"}%>
+                    <%= link_to "編集", edit_member_path(member.id) , data: {"turbolinks" => false}%>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+        <% if !@members_one.blank? %>
+          <h2 class="sub-title">1年</h2>
+          <div class="flex-container" >
+            <% @members_one.each do |member| %>
+              <div class="member-box <%= ' member-box-loggedin' if session[:log_in] %>" 
+              data-name="<%= member.name %>" data-grade="1年" data-position="<%= member.position %>"
+              data-from="<%= member.from%>" data-text="<%= member.text %>" data-department="<%= member.department %>"
+              data-director= "<%=member.director %>" data-word="<%= member.word %>" data-image="<%= member.display_image %>">
+                <div class="member-top">
+                  <div class="member-image"><%= image_tag member.display_image if member.image.attached? %></div>
+                </div>
+                <div class="member-bottom">
+                  <h3 class="member-name"><%= member.name %></h3>
+                  <h3 class="member-position"><%= member.position %></h3>
+                  <% if session[:log_in] %>
+                    <%= link_to "削除", member, method: :delete, data: { confirm: "本当に削除しますか?"}%>
+                    <%= link_to "編集", edit_member_path(member.id) , data: {"turbolinks" => false}%>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-</div>
-
-<div class="sub-container" >
-  <% if !@members_fourth.blank? %>
-    <h2 class="sub-title" >4年</h2>
-    <div class="flex-container" >
-      <% @members_fourth.each do |member| %>
-        <div class="member-box <%= ' member-box-loggedin' if session[:log_in] %>" 
-        data-name="<%= member.name %>" data-grade="4年" data-position="<%= member.position %>"
-        data-from="<%= member.from%>" data-text="<%= member.text %>" data-department="<%= member.department %>"
-        data-director= "<%=member.director %>" data-word="<%= member.word %>" data-image="<%= member.display_image %>">
-          <div class="member-top">
-            <div class="member-image"><%= image_tag member.display_image if member.image.attached? %></div>
-          </div>
-          <div class="member-bottom">
-            <h3 class="member-name"><%= member.name %></h3>
-            <h3 class="member-position"><%= member.position %></h3>
-            <% if session[:log_in] %>
-              <%= link_to "削除", member, method: :delete, data: { confirm: "本当に削除しますか?"}%>
-              <%= link_to "編集", edit_member_path(member.id) , data: {"turbolinks" => false}%>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-  <% if !@members_third.blank? %>
-    <h2 class="sub-title">3年</h2>
-    <div class="flex-container" >
-      <% @members_third.each do |member| %>
-        <div class="member-box <%= ' member-box-loggedin' if session[:log_in] %>" 
-        data-name="<%= member.name %>" data-grade="3年" data-position="<%= member.position %>"
-        data-from="<%= member.from%>" data-text="<%= member.text %>" data-department="<%= member.department %>"
-        data-director= "<%=member.director %>" data-word="<%= member.word %>" data-image="<%= member.display_image %>">
-          <div class="member-top">
-            <div class="member-image"><%= image_tag member.display_image if member.image.attached? %></div>
-          </div>
-          <div class="member-bottom">
-            <h3 class="member-name"><%= member.name %></h3>
-            <h3 class="member-position"><%= member.position %></h3>
-            <% if session[:log_in] %>
-              <%= link_to "削除", member, method: :delete, data: { confirm: "本当に削除しますか?"}%>
-              <%= link_to "編集", edit_member_path(member.id) , data: {"turbolinks" => false}%>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-  <% if !@members_second.blank? %>
-    <h2 class="sub-title">2年</h2>
-    <div class="flex-container" >
-      <% @members_second.each do |member| %>
-        <div class="member-box <%= ' member-box-loggedin' if session[:log_in] %>"
-        data-name="<%= member.name %>" data-grade="2年" data-position="<%= member.position %>"
-        data-from="<%= member.from%>" data-text="<%= member.text %>" data-department="<%= member.department %>"
-        data-director= "<%=member.director %>" data-word="<%= member.word %>" data-image="<%= member.display_image %>">
-          <div class="member-top">
-            <div class="member-image"><%= image_tag member.display_image if member.image.attached? %></div>
-          </div>
-          <div class="member-bottom">
-            <h3 class="member-name"><%= member.name %></h3>
-            <h3 class="member-position"><%= member.position %></h3>
-            <% if session[:log_in] %>
-              <%= link_to "削除", member, method: :delete, data: { confirm: "本当に削除しますか?"}%>
-              <%= link_to "編集", edit_member_path(member.id) , data: {"turbolinks" => false}%>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-  <% if !@members_one.blank? %>
-    <h2 class="sub-title">1年</h2>
-    <div class="flex-container" >
-      <% @members_one.each do |member| %>
-        <div class="member-box <%= ' member-box-loggedin' if session[:log_in] %>" 
-        data-name="<%= member.name %>" data-grade="1年" data-position="<%= member.position %>"
-        data-from="<%= member.from%>" data-text="<%= member.text %>" data-department="<%= member.department %>"
-        data-director= "<%=member.director %>" data-word="<%= member.word %>" data-image="<%= member.display_image %>">
-          <div class="member-top">
-            <div class="member-image"><%= image_tag member.display_image if member.image.attached? %></div>
-          </div>
-          <div class="member-bottom">
-            <h3 class="member-name"><%= member.name %></h3>
-            <h3 class="member-position"><%= member.position %></h3>
-            <% if session[:log_in] %>
-              <%= link_to "削除", member, method: :delete, data: { confirm: "本当に削除しますか?"}%>
-              <%= link_to "編集", edit_member_path(member.id) , data: {"turbolinks" => false}%>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
 <script>
   $(function () {
     $(".member-box").click(function(){

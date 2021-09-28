@@ -2,36 +2,39 @@
   <h1>大会結果</h1>
 </div>
 
-<div class="sub-container result-container">
-
-  <ul class="results-lists">
-    <% @results.each do |result| %>
-      <li class="result-list">
-        <div class="container-fluid result-box">
-          <a href=<%= rails_blob_path(result.document) %> class="result-file-link" target="_blank" rel="noopener noreferrer"> 
-            <div class="row">
-              <% if result.document.attached? %>
-                <div class="result-file col-sm-4">
-                  <span class="material-icons tennis-icon">sports_tennis</span>
-                  <div class="result">RESULT</div>
-                </div>
-                <div class="result-name col-sm-8">
-                  <div class="result-name-text">
-                    <%= result.name %>
+<div class="under-bg container-cancellation">
+    <div class="container">
+      <div class="sub-container result-container">
+        <ul class="results-lists">
+          <% @results.each do |result| %>
+            <li class="result-list">
+              <div class="container-fluid result-box">
+                <a href=<%= rails_blob_path(result.document) %> class="result-file-link" target="_blank" rel="noopener noreferrer"> 
+                  <div class="row">
+                    <% if result.document.attached? %>
+                      <div class="result-file col-sm-4">
+                        <span class="material-icons tennis-icon">sports_tennis</span>
+                        <div class="result">RESULT</div>
+                      </div>
+                      <div class="result-name col-sm-8">
+                        <div class="result-name-text">
+                          <%= result.name %>
+                        </div>
+                      </div>
+                    <% end %>
                   </div>
-                </div>
-              <% end %>
-            </div>
-          </a>
-          <% if session[:log_in]  %>
-            <div class="result-setting-btn">
-              <%= link_to "削除", result, method: :delete, data: { confirm: "本当に削除しますか?"}%>
-              <%= link_to "編集", edit_result_path(result.id) , data: {"turbolinks" => false}%>
-            </div>
+                </a>
+                <% if session[:log_in]  %>
+                  <div class="result-setting-btn">
+                    <%= link_to "削除", result, method: :delete, data: { confirm: "本当に削除しますか?"}%>
+                    <%= link_to "編集", edit_result_path(result.id) , data: {"turbolinks" => false}%>
+                  </div>
+                <% end %>
+              </div>
+            </li>
           <% end %>
-        </div>
-      </li>
-    <% end %>
-  </ul>
-  
-</div>
+        </ul>
+        
+      </div>
+    </div>
+  </div>

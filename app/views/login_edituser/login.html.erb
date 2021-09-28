@@ -2,18 +2,22 @@
   <h1>編集者ログイン</h1>
 </div>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_with(url: login_path, scope: :login_edituser, local: true) do |f| %>
-
-      <%= f.label :user_name %>
-      <%= f.text_field :user_name, class: 'form-control' %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.submit "ログイン", class: "btn btn-primary" %>
-    <% end %>
-
+<div class="under-bg container-cancellation">
+    <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_with(url: login_path, scope: :login_edituser, local: true) do |f| %>
+    
+          <%= f.label :user_name %>
+          <%= f.text_field :user_name, class: 'form-control' %>
+    
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+    
+          <%= f.submit "ログイン", class: "btn btn-primary" %>
+        <% end %>
+    
+      </div>
+    </div>
   </div>
 </div>
