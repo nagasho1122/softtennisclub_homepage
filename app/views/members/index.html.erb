@@ -7,7 +7,6 @@
 <button class="close-btn"><i class="fas fa-times"></i></button>
 <div class="fixed-box">
   <div class="member-card-box container-fluid">
-    <% member = Member.first %> 
     <div class="row">
       <div class="col-sm-3 member-card-left">
         <div class="member-image member-image-card"><img class="inf-image"src=""></div>
@@ -16,37 +15,37 @@
         <ul class="member-informations">
           <li class="member-inf">
             <div class="inf-left">名前：</div>
-            <div class="inf-right inf-name"><%= member.name %></div>
+            <div class="inf-right inf-name"></div>
           </li>
           <li class="member-inf">
             <div class="inf-left">ポジション：</div>
-            <div class="inf-right inf.position"><%= member.position %></div>
+            <div class="inf-right inf-position"></div>
           </li>
           <li class="member-inf">
             <div class="inf-left">学年：</div>
-            <div class="inf-right inf-grade">2年</div>
+            <div class="inf-right inf-grade"></div>
           </li>
           <li class="member-inf">
             <div class="inf-left">役職：</div>
-            <div class="inf-right inf-director"><%= member.director %></div>
+            <div class="inf-right inf-director"></div>
           </li>
           <li class="member-inf">
             <div class="inf-left">所属：</div>
-            <div class="inf-right inf-department"><%= member.department %></div>
+            <div class="inf-right inf-department"></div>
           </li>
           <li class="member-inf">
             <div class="inf-left">出身：</div>
-            <div class="inf-right inf-from"><%= member.from %></div>
+            <div class="inf-right inf-from"></div>
           </li>
         </ul>
       </div>
       <div class="information-text inf-long">
         <div class="inf-long-left"><div class="left-text">紹介文：</div></div>
-        <duv class="inf-long-right" ><div class="right-text inf-text"><%= "あ"*200 %></div></duv>
+        <duv class="inf-long-right" ><div class="right-text inf-text"></div></duv>
       </div>
       <div class="information-word inf-long">
         <div class="inf-long-left"><div class="left-text">ひとこと：</div></div>
-        <duv class="inf-long-right" ><div class="right-text inf-word"><%= "い"*120 %></div></duv>
+        <duv class="inf-long-right" ><div class="right-text inf-word"></div></duv>
       </div>
     </div>
   </div>
@@ -58,7 +57,7 @@
     <div class="flex-container" >
       <% @members_fourth.each do |member| %>
         <div class="member-box <%= ' member-box-loggedin' if session[:log_in] %>" 
-        data-name="<%= member.name %>" data-grade="4"　data-position="<%= member.position %>"
+        data-name="<%= member.name %>" data-grade="4年" data-position="<%= member.position %>"
         data-from="<%= member.from%>" data-text="<%= member.text %>" data-department="<%= member.department %>"
         data-director= "<%=member.director %>" data-word="<%= member.word %>" data-image="<%= member.display_image %>">
           <div class="member-top">
@@ -81,7 +80,7 @@
     <div class="flex-container" >
       <% @members_third.each do |member| %>
         <div class="member-box <%= ' member-box-loggedin' if session[:log_in] %>" 
-        data-name="<%= member.name %>" data-grade="3"　data-position="<%= member.position %>"
+        data-name="<%= member.name %>" data-grade="3年" data-position="<%= member.position %>"
         data-from="<%= member.from%>" data-text="<%= member.text %>" data-department="<%= member.department %>"
         data-director= "<%=member.director %>" data-word="<%= member.word %>" data-image="<%= member.display_image %>">
           <div class="member-top">
@@ -104,7 +103,7 @@
     <div class="flex-container" >
       <% @members_second.each do |member| %>
         <div class="member-box <%= ' member-box-loggedin' if session[:log_in] %>"
-        data-name="<%= member.name %>" data-grade="2"　data-position="<%= member.position %>"
+        data-name="<%= member.name %>" data-grade="2年" data-position="<%= member.position %>"
         data-from="<%= member.from%>" data-text="<%= member.text %>" data-department="<%= member.department %>"
         data-director= "<%=member.director %>" data-word="<%= member.word %>" data-image="<%= member.display_image %>">
           <div class="member-top">
@@ -127,7 +126,7 @@
     <div class="flex-container" >
       <% @members_one.each do |member| %>
         <div class="member-box <%= ' member-box-loggedin' if session[:log_in] %>" 
-        data-name="<%= member.name %>" data-grade="1"　data-position="<%= member.position %>"
+        data-name="<%= member.name %>" data-grade="1年" data-position="<%= member.position %>"
         data-from="<%= member.from%>" data-text="<%= member.text %>" data-department="<%= member.department %>"
         data-director= "<%=member.director %>" data-word="<%= member.word %>" data-image="<%= member.display_image %>">
           <div class="member-top">
