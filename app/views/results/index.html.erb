@@ -8,7 +8,7 @@
     <% @results.each do |result| %>
       <li class="result-list">
         <div class="container-fluid result-box">
-          <a href=<%= rails_blob_path(result.document) %> class="result-file-link" > 
+          <a href=<%= rails_blob_path(result.document) %> class="result-file-link" target="_blank" rel="noopener noreferrer"> 
             <div class="row">
               <% if result.document.attached? %>
                 <div class="result-file col-sm-4">
