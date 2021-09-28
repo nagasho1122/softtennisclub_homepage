@@ -23,6 +23,12 @@
               <% end %>
             </div>
           </a>
+          <% if session[:log_in]  %>
+            <div class="result-setting-btn">
+              <%= link_to "削除", result, method: :delete, data: { confirm: "本当に削除しますか?"}%>
+              <%= link_to "編集", edit_result_path(result.id) , data: {"turbolinks" => false}%>
+            </div>
+          <% end %>
         </div>
       </li>
     <% end %>

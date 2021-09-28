@@ -184,6 +184,9 @@ img{
   .twitter-window{
     padding-bottom: 30px;
   }
+  .page-top-image{
+    background-size: auto 100%;
+  }
 }
 
 
@@ -831,6 +834,11 @@ img{
     background-color: $theme-color-hover;
   }
 }
+.result-setting-btn{
+  text-align: right;
+  background-color: #F3F3F3;
+  margin: 0 -15px;
+}
 
 
 .result-file-link{
@@ -880,6 +888,7 @@ img{
     color: $theme-color;
   }
 }
+
 
 @media screen and (max-width: 720px) {
   .result-list{

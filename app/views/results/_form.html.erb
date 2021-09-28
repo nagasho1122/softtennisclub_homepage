@@ -4,9 +4,10 @@
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
 
-
-      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
       <span class="document">
+        <%= f.label :document %>
         <%= f.file_field :document, accept: "application/pdf"%>
       </span>
+      
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
     <% end %>

@@ -2,7 +2,7 @@ class ResultsController < ApplicationController
    before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
   
   def index
-    @results = Result.all
+    @results = Result.all.order(id: "DESC")
   end
   
   def new
