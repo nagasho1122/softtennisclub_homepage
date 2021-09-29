@@ -57,7 +57,7 @@ h1 {
     1px 0 0 black,
     0 1px 0 black,
     -1px 0 0 black,
-    0 -1px 0 black
+    0 -1px 0 black;
 }
 
 h2 {
@@ -110,6 +110,12 @@ img{
 
 #list-item{
   color:black;
+  font-weight: bold;
+  text-shadow:
+    1px 0 0 white,
+    0 1px 0 white,
+    -1px 0 0 white,
+    0 -1px 0 white;
   &:hover{
   }
 }
@@ -118,6 +124,12 @@ img{
   color:black;
   margin-right: 45px;
   opacity: 0.8;
+  font-weight: bold;
+  text-shadow:
+    1px 0 0 white,
+    0 1px 0 white,
+    -1px 0 0 white,
+    0 -1px 0 white;
   &:hover, &:focus{
     opacity: 1;
   }
@@ -173,7 +185,6 @@ img{
 
 #home-image{
   height: 100vh;
-  box-shadow: 0 80px 80px -70px #ffffff inset;
 }
 .under-bg{
   background-color: #F3F3F3;
@@ -460,7 +471,6 @@ img{
 
 #contact-image{
   height: 50vh;
-  box-shadow: 0 80px 80px -60px #ffffff inset;
   h1{
     box-sizing: border-box;
     display: flex;
@@ -584,7 +594,6 @@ img{
 
 #member-image{
   height: 50vh;
-  box-shadow: 0 80px 80px -50px #ffffff inset;
   h1{
     box-sizing: border-box;
     display: flex;
@@ -859,7 +868,6 @@ img{
 }
 #action-image{
   height: 50vh;
-  box-shadow: 0 80px 80px -60px #ffffff inset;
   h1{
     box-sizing: border-box;
     display: flex;
@@ -899,7 +907,6 @@ img{
 }
 #setting-option{
   height: 50vh;
-  box-shadow: 0 80px 80px -60px #ffffff inset;
   h1{
     box-sizing: border-box;
     display: flex;
@@ -952,7 +959,6 @@ img{
 
 #result-image{
   height: 50vh;
-  box-shadow: 0 80px 80px -60px #ffffff inset;
   h1{
     box-sizing: border-box;
     display: flex;
