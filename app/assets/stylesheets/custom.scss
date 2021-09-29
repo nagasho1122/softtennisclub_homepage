@@ -96,7 +96,10 @@ img{
 }
 
 
-/* header */
+/* --------------------------------
+ * header
+ * -------------------------------- */
+
 
 .navbar{
   width: 100%;
@@ -127,12 +130,31 @@ img{
   left: 30px;
   z-index: 5;
 }
+@media screen and (max-width: 360px) {
+  #logo {
+    width: 150px;
+    left: 10px;
+    top: 20px;
+  }
+}
+
+.columns-form-box{
+  font-family: 'ＭＳ ゴシック', 'Osaka-等幅';
+  resize: none;
+  overflow: hidden;
+  white-space: break-spaces;
+  line-break: anywhere;
+}
+
 
 .navbar{
   margin-bottom: 0px;
   padding: 20px 0 20px 0;
 }
-/* home */
+
+/* --------------------------------
+ * home
+ * -------------------------------- */
 
 
 #home-image::before {
@@ -194,7 +216,7 @@ img{
   }
 }
 
-@media (max-width:768px ){
+@media (max-width: 768px ){
   .twitter-window{
     padding-bottom: 30px;
   }
@@ -277,6 +299,7 @@ img{
 /* --------------------------------
  * middle
  * -------------------------------- */
+ 
  .grid-image-lg{
    display: none;
  }
@@ -416,7 +439,9 @@ img{
 }
 
 
-/* contact */
+/* --------------------------------
+ * contact
+ * -------------------------------- */
 
 
 #contact-image::before{
@@ -537,7 +562,11 @@ img{
   }
 }
 
-/* member */
+/* --------------------------------
+ * member
+ * -------------------------------- */
+
+
 #member-image:before{
   background-image: image-url('member_page.JPG');
   background-size: cover;/* cover指定 */
@@ -604,7 +633,9 @@ img{
   }
 }
 
-/** fixed-member-card **/
+/* --------------------------------
+ * fixed-member-card
+ * -------------------------------- */
 
 .fixed-bg{
   position: fixed;
@@ -808,7 +839,9 @@ img{
 }
 
 
-/* action */
+/* --------------------------------
+ * action
+ * -------------------------------- */
 
 #action-image:before{
   background-image: image-url('team_home.JPG');
@@ -898,7 +931,9 @@ img{
   }
 }
 
-/* result_index */
+/* --------------------------------
+ * results-index
+ * -------------------------------- */
 
 #result-image:before{
   background-image: image-url('result_index_image.JPG');
@@ -1037,6 +1072,7 @@ img{
     font-size: 1.2em;
   }
 }
+
 /* --------------------------------
  * top-btn
  * -------------------------------- */
@@ -1154,7 +1190,9 @@ img{
   }
 }
 
-/* miscellaneous */
+/* --------------------------------
+ * miscellaneous 
+ * -------------------------------- */
 
 .debug_dump {
   clear: both;
@@ -1179,7 +1217,9 @@ img{
   }
 }
 
-/* forms */
+/* --------------------------------
+ * form-all
+ * -------------------------------- */
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -1192,7 +1232,36 @@ input {
   height: auto !important;
 }
 
-/* member form   */
+.form-container{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#file-form{
+  background-color: white;
+}
+
+#text-count, #word-count{
+  margin-bottom: 5px;
+  resize: none;
+  white-space: break-spaces;
+  line-break: anywhere;
+}
+.text-validate, .word-validate{
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+
+
+@media screen and (max-width: 576px) {
+  .form-container{
+    padding: 30px;
+  }
+}
+
+/* --------------------------------
+ * member-form
+ * -------------------------------- */
 #preview{
   max-width:50%;
   height:auto;

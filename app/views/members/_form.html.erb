@@ -5,23 +5,25 @@
       <%= f.text_field :name, class: 'form-control' %>
 
       <%= f.label :position %>
-      <%= f.text_field :position, class: 'form-control' %>
+      <%= f.select :position, [["前衛", "前衛"], ["後衛", "後衛"], ["シングル", "シングル"]], include_blank: "選択して下さい", class: 'form-control' %>
 
       <%= f.label :from %>
       <%= f.text_field :from, class: 'form-control' %>
-
-      <%= f.label :text %>
-      <%= f.text_field :text, class: 'form-control' %>
       
       <%= f.label :department %>
-      <%= f.text_field :department,  class: 'form-control' %>
+      <%= f.select :department, [["教育学部", "教育学部"], ["経済学部", "経済学部"], ["経営学部", "経営学部"], ["理工学部", "理工学部"],  ["都市科学部", "都市科学部"]], include_blank: "選択して下さい", class: 'form-control' %>
       
       <%= f.label :director %>
       <%= f.text_field :director, class: 'form-control' %>
+    
+      <%= f.label :text %>
+      <%= f.text_area :text, class: 'form-control columns-form-box', :size => "36x5", id: "text-count" %>
+      <div class="text-validate"><span class="show-text-count">0</span>文字 ※5行まで。</div>
       
       <%= f.label :word %>
-      <%= f.text_field :word, class: 'form-control' %>
-      
+      <%= f.text_area :word, class: 'form-control columns-form-box', :size => "36x4", id: "word-count" %>
+      <div class="word-validate"><span class="show-word-count">0</span>文字 ※4行まで。</div>
+
       <%= f.label :addmission_date %>
       <%= f.date_field :addmission_date, class: 'form-control' %>
 
@@ -48,5 +50,17 @@
           preview.src = "";
           }
         }
+        
+        $(function(){
+
+          $('#text-count').keyup(function(){
+            var count = $(this).val().length;
+            $('.show-text-count').text(count);
+          });
+          $('#word-count').keyup(function(){
+            var count = $(this).val().length;
+            $('.show-word-count').text(count);
+          });
+      });
 　　 </script>
     <% end %>

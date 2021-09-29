@@ -6,7 +6,7 @@
 
       <span class="document">
         <%= f.label :document %>
-        <%= f.file_field :document, accept: "application/pdf"%>
+        <%= f.file_field :document, accept: "application/pdf", id: "file-form" %>
       </span>
       
       <%= f.submit yield(:button_text), class: "btn btn-primary" %>
