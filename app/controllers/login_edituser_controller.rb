@@ -28,7 +28,7 @@ class LoginEdituserController < ApplicationController
     
     def login_check(user_params)
       user_name = "横国軟式庭球部編集者"
-      password = "yunsofttennis4559"
+      password = "ynusofttennis4559"
       if user_params[:user_name] == user_name && user_params[:password] == password
         return true
       else
