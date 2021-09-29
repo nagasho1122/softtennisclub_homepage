@@ -2,9 +2,10 @@
 <html>
   <head>
     <link rel="icon" type="image/png" href="/assets/icon2.png">
-    <title>横浜国立大学軟式庭球部</title>
+    <title>横浜国立大学ソフトテニス部HP</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= analytics_init if Rails.env.production? %>
     <%= stylesheet_link_tag    'application', media: 'all',
                                'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application',

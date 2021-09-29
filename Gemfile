@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'bootstrap-sass', '3.4.1'
+gem "google-analytics-rails"
 gem 'aws-sdk-s3',              '1.48', require: false
 gem 'active_storage_validations'
 gem 'image_processing'
