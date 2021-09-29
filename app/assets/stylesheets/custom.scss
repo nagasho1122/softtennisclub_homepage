@@ -52,6 +52,12 @@ h1 {
   margin-bottom: 30px;
   text-align: center;
   color: white;
+  font-weight: bold;
+  text-shadow:
+    1px 0 0 black,
+    0 1px 0 black,
+    -1px 0 0 black,
+    0 -1px 0 black
 }
 
 h2 {
