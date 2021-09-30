@@ -11,7 +11,7 @@ class LoginEdituserControllerTest < ActionDispatch::IntegrationTest
     get login_path
     assert_template "login_edituser/login"
     post login_path, params:{ login_edituser:  {user_name: " ", 
-                      password: "yunsofttennis4559"}}
+                      password: "ynusofttennis4559"}}
     assert_template "login_edituser/login"
     assert_not flash.empty?
     get root_url
@@ -22,7 +22,7 @@ class LoginEdituserControllerTest < ActionDispatch::IntegrationTest
     get login_path
     assert_template "login_edituser/login"
     post login_path, params: { login_edituser: {user_name: "横国軟式庭球部編集者", 
-                      password: "yunsofttenni"} }
+                      password: "ynusofttenni"} }
     assert_template "login_edituser/login"
     assert_not flash.empty?
     get root_url
@@ -33,7 +33,7 @@ class LoginEdituserControllerTest < ActionDispatch::IntegrationTest
     get login_path
     assert_template "login_edituser/login"
     post login_path, params: { login_edituser: {user_name: "横国軟式庭球部編集者",
-                      password: "yunsofttennis4559"} }
+                      password: "ynusofttennis4559"} }
     assert_redirected_to root_url
     follow_redirect!
     assert_not flash.empty?
@@ -45,7 +45,7 @@ class LoginEdituserControllerTest < ActionDispatch::IntegrationTest
     get login_path
     assert_template "login_edituser/login"
     post login_path, params: { login_edituser: {user_name: "横国軟式庭球部編集者",
-                      password: "yunsofttennis4559"} }
+                      password: "ynusofttennis4559"} }
     assert_redirected_to root_url
     delete logout_path
     assert_redirected_to root_url

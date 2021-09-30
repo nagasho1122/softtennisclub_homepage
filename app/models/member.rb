@@ -1,6 +1,7 @@
 class Member < ApplicationRecord
   has_one_attached :image
   validates :name, presence: true, length: {maximum: 15}
+  validates :name_alphabet, presence: true, length: {maximum: 20}
   validates :position, presence: true, length: {maximum: 10}
   validates :from, presence: true, length: {maximum: 20}
   validates :text, presence: true, length: {maximum: 180}

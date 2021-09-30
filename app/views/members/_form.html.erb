@@ -3,6 +3,9 @@
 
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
+      
+      <%= f.label :name_alphabet %>
+      <%= f.text_field :name_alphabet, class: 'form-control' %>
 
       <%= f.label :position %>
       <%= f.select :position, [["前衛", "前衛"], ["後衛", "後衛"], ["シングル", "シングル"]], include_blank: "選択して下さい", class: 'form-control' %>

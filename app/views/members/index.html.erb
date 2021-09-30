@@ -60,7 +60,7 @@
           <div class="flex-container" >
             <% @members_fourth.each do |member| %>
               <div class="member-box <%= ' member-box-loggedin' if session[:log_in] %>" 
-              data-name="<%= member.name %>" data-grade="4年" data-position="<%= member.position %>"
+              data-name="<%= member.name %>" data-name_alphabet="<%= member.name_alphabet  %>" data-grade="4年" data-position="<%= member.position %>"
               data-from="<%= member.from%>" data-text="<%= member.text %>" data-department="<%= member.department %>"
               data-director= "<%=member.director %>" data-word="<%= member.word %>" data-image="<%= member.display_image %>">
                 <div class="member-top">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="member-bottom">
                   <h3 class="member-name"><%= member.name %></h3>
-                  <h3 class="member-position"><%= member.position %></h3>
+                  <h3 class="member-name-alphabet"><%= member.name_alphabet  %></h3>
                   <% if session[:log_in] %>
                     <%= link_to "削除", member, method: :delete, data: { confirm: "本当に削除しますか?"}%>
                     <%= link_to "編集", edit_member_path(member.id) , data: {"turbolinks" => false}%>
@@ -83,7 +83,7 @@
           <div class="flex-container" >
             <% @members_third.each do |member| %>
               <div class="member-box <%= ' member-box-loggedin' if session[:log_in] %>" 
-              data-name="<%= member.name %>" data-grade="3年" data-position="<%= member.position %>"
+              data-name="<%= member.name %>" data-name_alphabet="<%= member.name_alphabet  %>" data-grade="3年" data-position="<%= member.position %>"
               data-from="<%= member.from%>" data-text="<%= member.text %>" data-department="<%= member.department %>"
               data-director= "<%=member.director %>" data-word="<%= member.word %>" data-image="<%= member.display_image %>">
                 <div class="member-top">
@@ -91,7 +91,7 @@
                 </div>
                 <div class="member-bottom">
                   <h3 class="member-name"><%= member.name %></h3>
-                  <h3 class="member-position"><%= member.position %></h3>
+                  <h3 class="member-name-alphabet"><%= member.name_alphabet  %></h3>
                   <% if session[:log_in] %>
                     <%= link_to "削除", member, method: :delete, data: { confirm: "本当に削除しますか?"}%>
                     <%= link_to "編集", edit_member_path(member.id) , data: {"turbolinks" => false}%>
@@ -106,7 +106,7 @@
           <div class="flex-container" >
             <% @members_second.each do |member| %>
               <div class="member-box <%= ' member-box-loggedin' if session[:log_in] %>"
-              data-name="<%= member.name %>" data-grade="2年" data-position="<%= member.position %>"
+              data-name="<%= member.name %>" data-name_alphabet="<%= member.name_alphabet  %>" data-grade="2年" data-position="<%= member.position %>"
               data-from="<%= member.from%>" data-text="<%= member.text %>" data-department="<%= member.department %>"
               data-director= "<%=member.director %>" data-word="<%= member.word %>" data-image="<%= member.display_image %>">
                 <div class="member-top">
@@ -114,7 +114,7 @@
                 </div>
                 <div class="member-bottom">
                   <h3 class="member-name"><%= member.name %></h3>
-                  <h3 class="member-position"><%= member.position %></h3>
+                  <h3 class="member-name-alphabet"><%= member.name_alphabet  %></h3>
                   <% if session[:log_in] %>
                     <%= link_to "削除", member, method: :delete, data: { confirm: "本当に削除しますか?"}%>
                     <%= link_to "編集", edit_member_path(member.id) , data: {"turbolinks" => false}%>
@@ -129,7 +129,7 @@
           <div class="flex-container" >
             <% @members_one.each do |member| %>
               <div class="member-box <%= ' member-box-loggedin' if session[:log_in] %>" 
-              data-name="<%= member.name %>" data-grade="1年" data-position="<%= member.position %>"
+              data-name="<%= member.name %>" data-name_alphabet="<%= member.name_alphabet  %>" data-grade="1年" data-position="<%= member.position %>"
               data-from="<%= member.from%>" data-text="<%= member.text %>" data-department="<%= member.department %>"
               data-director= "<%=member.director %>" data-word="<%= member.word %>" data-image="<%= member.display_image %>">
                 <div class="member-top">
@@ -137,7 +137,7 @@
                 </div>
                 <div class="member-bottom">
                   <h3 class="member-name"><%= member.name %></h3>
-                  <h3 class="member-position"><%= member.position %></h3>
+                  <h3 class="member-name-alphabet"><%= member.name_alphabet  %></h3>
                   <% if session[:log_in] %>
                     <%= link_to "削除", member, method: :delete, data: { confirm: "本当に削除しますか?"}%>
                     <%= link_to "編集", edit_member_path(member.id) , data: {"turbolinks" => false}%>
@@ -154,6 +154,8 @@
   $(function () {
     $(".member-box").click(function(){
       var $memberName = $(this).data('name');
+      var $memberNameAlphabet = $(this).data("name_alphabet")
+      var $memberNameFull = $memberName + " (" + $memberNameAlphabet + ")"
       var $memberGrade = $(this).data('grade');
       var $memberPosition = $(this).data("position");
       var $memberFrom = $(this).data("from");
@@ -167,7 +169,7 @@
         $memberDirector = "ー";
       }
       
-      $(".inf-name").text($memberName)
+      $(".inf-name").text($memberNameFull)
       $(".inf-grade").text($memberGrade)
       $(".inf-from").text($memberFrom)
       $(".inf-position").text($memberPosition)

@@ -16,7 +16,7 @@ class ActiveSupport::TestCase
   class ActionDispatch::IntegrationTest
     def log_in_as
       post login_path, params: { login_edituser: { user_name: "横国軟式庭球部編集者",
-                          password: "yunsofttennis4559" }}
+                          password: "ynusofttennis4559" }}
     end
   end
   # Add more helper methods to be used by all tests here...

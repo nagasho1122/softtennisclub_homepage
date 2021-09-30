@@ -4,7 +4,7 @@ class MemberTest < ActiveSupport::TestCase
   
   def setup
     image = Rack::Test::UploadedFile.new("test/fixtures/default.png", "image/png") 
-    @member = Member.new(name:"横国太郎", position: "後衛", from: "横浜高校", 
+    @member = Member.new(name:"横国太郎", name_alphabet: "Yokokoku Tarou", position: "後衛", from: "横浜高校", 
                   text: "生粋のハマっ子。最近パチンコにハマってるカス野郎",
                   department: "教育学部", director: "副将", 
                   word: "どこだよそれFランジャーン", 
@@ -40,8 +40,13 @@ class MemberTest < ActiveSupport::TestCase
     assert_not @member.valid?
   end
   
+  test "name_alphabet should be present" do
+    @member.name_alphabet= "  "
+    assert_not @member.valid?
+  end
+  
   test "director should be present" do
-    @member.director = "  "
+    @member.director= "  "
     assert @member.valid?
   end
   
