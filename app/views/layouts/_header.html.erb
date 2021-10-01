@@ -6,6 +6,7 @@
         <button class="title-bars bars"><i class="fas fa-bars"></i></button>
         <nav>
           <ul class="nav navbar-nav navbar-right" >
+            <li class="nav-item" id="bar-only"><%= link_to "ホーム", root_path , id: "list-item", data: {"turbolinks" => false} %></li>
             <li class="nav-item"><%= link_to "チーム紹介", action_path , id: "list-item", data: {"turbolinks" => false} %></li>
             <li class="nav-item"><%= link_to "部員紹介",   members_path, id: "list-item", data: {"turbolinks" => false} %></li>
             <li class="nav-item"><%= link_to "大会結果", results_path, id: "list-item" , data: {"turbolinks" => false}%></li>

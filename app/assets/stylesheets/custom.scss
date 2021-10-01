@@ -120,6 +120,7 @@ img{
   }
 }
 
+
 #dropdown-item{
   color:black;
   margin-right: 45px;
@@ -265,6 +266,14 @@ img{
   }
 }
 
+/* --------------------------------
+ * responsive header bar
+ * -------------------------------- */
+
+#bar-only{
+  display: none;
+}
+
 .title-bars{
   color: $theme-color;
   border: none;
@@ -290,7 +299,7 @@ img{
     position: fixed;
     right: -70%;
     width: 200px;
-    height: 330px;
+    height: 370px;
     display: flex;
     flex-direction: column;
     background-color: #FFFFFF;
@@ -298,6 +307,9 @@ img{
     .nav-item{
       border-bottom: 1px solid #F3F3F3;
     }
+  }
+  #bar-only{
+    display: block;
   }
   .nav.open{
     right: 0;
