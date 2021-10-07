@@ -1,29 +1,29 @@
 <%= form_with(model: @member, local: true) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name %>
+      <%= f.label :name, "名前（必須）" %>
       <%= f.text_field :name, class: 'form-control' %>
       
-      <%= f.label :name_alphabet %>
+      <%= f.label :name_alphabet, "名前・アルファベット（必須）" %>
       <%= f.text_field :name_alphabet, class: 'form-control' %>
 
-      <%= f.label :position %>
+      <%= f.label :position, "ポジション（必須）" %>
       <%= f.select :position, [["前衛", "前衛"], ["後衛", "後衛"], ["シングル", "シングル"]], include_blank: "選択して下さい", class: 'form-control' %>
 
-      <%= f.label :from %>
+      <%= f.label :from, "出身高校（必須）" %>
       <%= f.text_field :from, class: 'form-control' %>
       
-      <%= f.label :department %>
+      <%= f.label :department, "所属学部（必須）" %>
       <%= f.select :department, [["教育学部", "教育学部"], ["経済学部", "経済学部"], ["経営学部", "経営学部"], ["理工学部", "理工学部"],  ["都市科学部", "都市科学部"]], include_blank: "選択して下さい", class: 'form-control' %>
       
-      <%= f.label :director %>
+      <%= f.label :director, "役職" %>
       <%= f.text_field :director, class: 'form-control' %>
     
-      <%= f.label :text %>
+      <%= f.label :text, "紹介文（必須）" %>
       <%= f.text_area :text, class: 'form-control columns-form-box', :size => "36x5", id: "text-count" %>
       <div class="text-validate"><span class="show-text-count">0</span>文字 ※5行まで。</div>
       
-      <%= f.label :word %>
+      <%= f.label :word, "ひとこと（必須）" %>
       <%= f.text_area :word, class: 'form-control columns-form-box', :size => "36x4", id: "word-count" %>
       <div class="word-validate"><span class="show-word-count">0</span>文字 ※4行まで。</div>
 
@@ -31,6 +31,7 @@
       <%= f.date_field :addmission_date, class: 'form-control' %>
 
       <span class="image">
+        <%= f.label :image, "画像（必須）" %>
         <%= f.file_field :image, onchange: 'previewImage(preview)', accept: "image/jpeg, image/gif, image/png" %>
         <% if @member.image.attached? %>
           <%= image_tag @member.display_image, id: 'preview' %>

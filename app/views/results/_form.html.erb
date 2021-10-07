@@ -1,11 +1,11 @@
 <%= form_with(model: @result, local: true) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name %>
+      <%= f.label :name, "ファイル名（必須）" %>
       <%= f.text_field :name, class: 'form-control' %>
 
       <span class="document">
-        <%= f.label :document %>
+        <%= f.label :document, "ファイル（必須）" %>
         <%= f.file_field :document, accept: "application/pdf", id: "file-form" %>
       </span>
       
