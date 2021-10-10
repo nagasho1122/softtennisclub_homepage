@@ -27,8 +27,8 @@ class LoginEdituserController < ApplicationController
     end
     
     def login_check(user_params)
-      user_name = "横国軟式庭球部編集者"
-      password = "ynusofttennis4559"
+      user_name = Rails.application.credentials.dig(:login, :user_name)
+      password = Rails.application.credentials.dig(:login, :password)
       if user_params[:user_name] == user_name && user_params[:password] == password
         return true
       else
